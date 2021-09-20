@@ -4,6 +4,18 @@ from src.app_services.app_interaction_service import AppInteractionService
 from src.app_utils.credentials import main_developer_credentials, get_developer_credentials
 from threading import Timer
 import src.app_utils.blockchain_utils as blockchain_utils
+import glob
+import io
+import os
+import uuid
+
+import numpy as np
+from flask import Flask, jsonify, make_response, render_template, request
+
+app = Flask(__name__)
+app.secret_key = "s3cr3t"
+app.debug = False
+
 
 main_dev_pk, main_dev_address = main_developer_credentials()
 
@@ -70,11 +82,16 @@ app_interaction_service.execute_bidding(bidder_private_key=main_dev_pk,
 print(13)
 print()
 # This should fail if we try to submit it after the bidding process has ended
-#app_interaction_service.execute_bidding(bidder_private_key=bidder_pk,
- #                                        bidder_address=bidder_address,
-  #                                       amount=5000005)
+app_interaction_service.execute_bidding(bidder_private_key=bidder_pk,
+                                         bidder_address=bidder_address,
+                                         amount=5000005)
 
 
+
+@app.route("/", methods=["GET"])
+def index():
+    title = "Create the input image"
+    return render_template("layouts/index.html", title=title)
 
 lastRound=app_interaction_service.get_block_number()
 print("last round--->")
@@ -91,3 +108,5 @@ app_interaction_service.pay_to_seller(asa_seller_address=app_initialization_serv
 
 
 
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)

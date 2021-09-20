@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+</head>
+<body>
+welcome
+<button onclick="ajaxFct()">click</button>
+<script>
+
+function ajaxFct() {
+
+    var server_data = [
+        {"bidder_private_key":"Rbo/+rvBu3s+y9GcvdrYhMTFTeeJJak5tk88vuczwJ2ntUNlZr8wQZzNEodvtZA4Y+hD88I695oeocwmnRXxTw=="},
+        {"bidder_address":"U62UGZLGX4YEDHGNCKDW7NMQHBR6QQ7TYI5PPGQ6UHGCNHIV6FHQWDBDVM"},
+        {"amount":4000000}
+];
+
+    $.ajax({
+  type: "POST",
+  url: "/bidding",
+  data: JSON.stringify(server_data),
+  contentType: "application/json",
+  success:function (e)
+  {
+      console.log(e);
+  }
+});
+}
+</script>
+
+<p>
+ private_key: tgHLJObH4B6CvTTSnjMXWuW2HPllBoNZ3QiBc+x3eiTCGlN4RqN7xe//w4iSB4jcMm/8oKpE7ykmQ1olZMzMrQ==
+  public_key: YINFG6CGUN54L377YOEJEB4I3QZG77FAVJCO6KJGINNCKZGMZSW6P5LNGQ
+</p>
+<br>
+<p>
+ private_key: ODUvqUhvyU6G4lGPHZjBKCwYDEXnevjwzSukQy/xo0csIacmk2v2kZVG53ror2EXrAH32WbNVYnh05RBxoGAnA==
+  public_key: FQQ2OJUTNP3JDFKG455ORL3BC6WAD56ZM3GVLCPB2OKEDRUBQCOIDWNWPI
+</p>
+<p>
+  private_key: jtwZJToS9AglfAMQO6OlaIqEaacMuz6cOSH+YE58Bbi6yVagDz9+ClMZGk4cvRke4kPK+rpcKrlqpoc0ttTCFQ==
+  public_key: XLEVNIAPH57AUUYZDJHBZPIZD3REHSX2XJOCVOLKU2DTJNWUYIKVEGE4LA
+</p>
+<br>
+<p>
+  private_key: +4IyVgzQq5qPny/D7GYLlZuY1S8LTbZ5MBuGqF+CFaTB2kYT+eEbQZpPdlcNissvri6Sb112nBPXcxrt4hKoXw==
+  public_key: YHNEME7Z4ENUDGSPOZLQ3CWLF6XC5ETPLV3JYE6XOMNO3YQSVBP7ZBELOI
+</p>
+</body>
+</html>

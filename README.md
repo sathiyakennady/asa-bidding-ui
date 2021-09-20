@@ -909,5 +909,3 @@ I strongly believe that we are just starting to scratch the surface of the usage
 I want to thanks [Cosimo Bassi](https://developer.algorand.org/u/cusma/) for making a tutorial on using smart contracts in the [Algo Realm Game](https://developer.algorand.org/solutions/algorealm-nft-royalty-game/) which inspired me to make this application.
 
 "# AsaBidding" 
-"# AsaBidding" 
-"# biddingApp" 
